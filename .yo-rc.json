@@ -1,0 +1,29 @@
+{
+  "generator-angularjs-library": {
+    "props": {
+      "author": {
+        "name": "StevenWeng",
+        "email": "wosteven@gmail.com"
+      },
+      "libraryName": {
+        "original": "angular-finance",
+        "camelized": "angularFinance",
+        "dasherized": "angular-finance",
+        "slugified": "angular-finance",
+        "parts": [
+          "angular",
+          "finance"
+        ]
+      },
+      "includeModuleDirectives": true,
+      "includeModuleFilters": true,
+      "includeModuleServices": true,
+      "includeAngularModuleResource": false,
+      "includeAngularModuleCookies": false,
+      "includeAngularModuleSanitize": false,
+      "librarySrcDirectory": "src/angularFinance",
+      "libraryUnitTestDirectory": "test/unit/angularFinance",
+      "libraryUnitE2eDirectory": "test/e2e/angularFinance"
+    }
+  }
+}
