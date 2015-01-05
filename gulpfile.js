@@ -13,6 +13,8 @@ var gulp = require('gulp'),
       'src/angularFinance/angularFinance.suffix'
     ];
 
+	require('gulp-release-tasks')(gulp);
+
 gulp.task('build', function() {
   gulp.src(sourceFiles)
     .pipe(concat('angular-finance.js'))
@@ -26,7 +28,7 @@ var option = {
    project: {
     "name": "angular-finance",
     "description": "Test",
-    "version": "0.0.0"
+    "version": "0.0.1"
    }
  };
 gulp.task('doc', function() {
