@@ -1,3 +1,8 @@
+var fs = require('fs');
+var getPackageJson = function () {
+  return JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+};
+
 var gulp = require('gulp'),
     karma = require('karma').server,
     concat = require('gulp-concat'),
@@ -16,19 +21,20 @@ var gulp = require('gulp'),
 	require('gulp-release-tasks')(gulp);
 
 gulp.task('build', function() {
+  var pkgVersion = getPackageJson().version;
   gulp.src(sourceFiles)
     .pipe(concat('angular-finance.js'))
-    .pipe(gulp.dest('./dist/'))
+    .pipe(gulp.dest('./dist/'+pkgVersion+'/'))
     .pipe(uglify())
     .pipe(rename('angular-finance.min.js'))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist/'+pkgVersion+'/'))
 });
 
 var option = {
    project: {
     "name": "angular-finance",
     "description": "Test",
-    "version": "0.0.1"
+    "version": getPackageJson().version
    }
  };
 gulp.task('doc', function() {
